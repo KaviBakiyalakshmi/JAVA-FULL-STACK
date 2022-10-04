@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="7.735">
+  <properties />
+  
+  
+            <testcase name="TitleTestFacebook" time="3.577" classname="com.simplilearn.testing.Assertion" />
+                <testcase name="TitleTest" time="4.158" classname="com.simplilearn.testing.Assertion" />
+      
+</testsuite>

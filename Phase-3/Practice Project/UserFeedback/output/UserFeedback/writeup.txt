@@ -1,0 +1,11 @@
+Step by Step Process
+
+First I used SpringInitilzr to create my project. After downloading it I loaded it into
+eclipse and edited the Application Properties file to connect with my database. I added
+dependencies to the pom.xml file and added a homepage with forms to input feedback and
+view the table of all the feedback. I created a feedback page for displaying all the feedback
+which uses the toString method from the feedback class and outputs it in a table format. I
+created a controller for the update to show that the feedback was successfully updated to the
+table. This controller has a link to the feedback page to view the table. I made a class called
+FeedbackRepository which extends CrudRepository to make the necessary changes to the table.
+Last, I made css changes to have the website be more visually appealing

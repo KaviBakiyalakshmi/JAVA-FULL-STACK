@@ -1,0 +1,23 @@
+Validation Email
+=================
+procedure:
+    
+    Step 0: I have imported the collection concepts under Arraylist
+     
+    step1:  Here i am using string for getting userid
+  
+    step 2: By using this add() method you get the Email id
+
+    step 3: After that we were performing validation of email
+
+    Step 4: And then check the email id is valid or not by using reqular expression.
+
+concepts:
+
+    Arraylist
+
+    String
+
+    Reqular expression
+
+         

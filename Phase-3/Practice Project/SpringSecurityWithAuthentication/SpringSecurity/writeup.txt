@@ -1,0 +1,43 @@
+Spring Security
+---------------
+
+Step 1: First you can create the spring started project from that you can add spring web
+
+Step 2: Add the Dependency in pom.xml file
+
+Step 3: In that Java folder can create one pojo classes contains getters,setters,constructors
+
+               these are the entity(name,password,role)
+
+Step 4: You can create one more java classes for CustomAuthenticationProvider in that you have to 
+
+          add some dummy details based on the admin and user.
+
+Step 5: If that authenticatedUser.isPresent() it will perform the check conditions.
+
+Step 6: And then config the admin,user credetencial using @Configuration Annotation ,
+
+                These are the url you can give at the runtime
+
+                .antMatchers("/").permitAll()
+                .antMatchers("/protected").hasRole("USER")
+                .antMatchers("/admin").hasRole("ADMIN");
+
+
+Step 7: then finaly come to the mapping part you can map the all classes and give some 
+
+              instruction which is based on the customer perspective.
+             
+             @RestController    
+             @RequestMapping("/")
+             @RequestMapping("/protected") 
+             @RequestMapping("/admin")
+
+Application.java class you can add that componentScan annotation then give us run.
+
+While running this project you can give the above format.
+
+ 
+ 
+
+

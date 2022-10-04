@@ -1,0 +1,248 @@
+DBConfig
+---------
+
+package RetriveProduct;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+public class DBConfig {
+	
+	public static Connection getConnection(Properties props) 
+	{
+		
+		Connection  conn=null;
+		
+		
+		
+		try 
+		{
+			//load the driver
+			Class.forName(props.getProperty("driver"));
+		
+					
+			conn= DriverManager.getConnection(
+					props.getProperty("url"),
+					props.getProperty("username"),
+					props.getProperty("password"));
+			 
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return conn;
+	}
+
+}
+
+
+FetchDBServlet
+---------------
+
+package RetriveProduct;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/list")
+public class FetchDBServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		
+		
+		PrintWriter out= resp.getWriter();
+		resp.setContentType("text/html");
+		Properties  props= new Properties();
+		
+		InputStream in=getServletContext().getResourceAsStream("/WEB-INF/application.properties");
+		props.load(in);
+		
+		
+		Connection conn= DBConfig.getConnection(props);
+		
+		
+		if(conn!=null) {
+			
+			Statement stmt;
+			try {
+				stmt = conn.createStatement();
+				ResultSet rs=stmt.executeQuery("select * from eproduct");
+				
+				out.print("<table border=1 cellpadding=10 cellspacing=0> <thead><tr>");
+				out.print("<th>ID</th><th>NAME</th><th>PRICE</th><th>DATE</th>");
+				out.print("<tr></thead>");
+				out.print("<tbody>");
+				
+				while(rs.next()) {
+					
+					out.print("<tr>");
+					//out.print(rs.getInt(1)+"  "+rs.getString(2)+" "+rs.getBigDecimal(3)+" "+rs.getTimestamp(4)+"<br>");
+					out.print("<td>'"+rs.getInt(1)+"'</td><td>'"+rs.getString(2)+"'</td><td>'"+rs.getBigDecimal(3)+"'</td><td>'"+rs.getTimestamp(4)+"'</td>");
+					
+					out.print("</tr>");
+				}
+				
+				out.print("</tbody></table>");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+		else {
+			
+			out.print("Error While Connecting Connections");
+		}
+		
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(req, resp);
+	}
+	
+	
+	
+
+}
+
+
+FilterDBServlet
+----------------
+
+package RetriveProduct;
+
+import java.io.*;
+import java.sql.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+@WebServlet("/retrive")
+
+public class FilterDBServlet extends HttpServlet
+{
+    public void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        response.setContentType ("text/html");
+        PrintWriter out = response.getWriter ();
+        String empid = request.getParameter ("id");
+        try
+        {
+            Class.forName ("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection ("jdbc:mysql://localhost:3306/ecommerce1", "root", "root");
+            PreparedStatement ps =con.prepareStatement ("select * from eproduct where id=?");
+         
+            ps.setString (1, empid);
+            out.print ("<table width=50% border=1>");
+            out.print ("<caption>Product Details:</caption>");
+            ResultSet rs = ps.executeQuery ();
+            /* Printing column names */
+            out.print ("</br></br>");
+            ResultSetMetaData rsmd = rs.getMetaData ();
+            int total = rsmd.getColumnCount ();
+            out.print ("<tr>");
+            for (int i = 1; i <= total; i++)
+         {
+             out.print ("<th>" + rsmd.getColumnName (i) + "</th>");
+         }
+            out.print ("</tr>");
+            /* Printing result */
+            while (rs.next ())
+         {
+            // out.print ("<tr><td>" + rs.getString (1) + "</td><td>" +  rs.getString (2) + " </td><td>" + rs.getInt (3) + "</td></tr>");
+            	
+            	out.print("<tr><td>'"+rs.getInt(1)+"'</td><td><b>'"+rs.getString(2)+"'</b></td><td>'"+rs.getBigDecimal(3)+"'</td><td>'"+rs.getTimestamp(4)+"'</td>");
+         }
+            out.print ("</table>");
+        }
+        catch (Exception e2)
+        {
+            e2.printStackTrace ();
+        }
+        finally
+        {
+            out.close ();
+        }
+    }
+    @Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(req, resp);
+	}
+}
+
+
+
+Index.html
+------------
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<H1>LIST OF PRODUCTS</H1>
+<a href="list">List Products</a>
+
+<br>
+<br>
+
+
+<h1>Get product details:</h1>
+	<form action="retrive" method="post">
+		<table>
+			<tr>
+				<td>Product ID:</td>
+				<td><input type="text" name="id" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Enter" /></td>
+			</tr>
+		</table>
+	
+</form>
+
+<br>
+<br>
+</body>
+</html>
+
+
+application.properties
+----------------------
+
+
+driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/ecommerce1
+username=root
+password=root

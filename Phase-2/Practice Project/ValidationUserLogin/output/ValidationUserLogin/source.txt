@@ -1,0 +1,221 @@
+Dashboard.java
+
+
+package com.validation;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Dashboard")
+public class Dashboard extends HttpServlet
+{
+	
+	private static final long serialVersionUID = 1L;
+	       
+	    
+	    public Dashboard() {
+	        super();
+	        // TODO Auto-generated constructor stub
+	    }
+
+		/**
+		 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+		 */
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			// TODO Auto-generated method stub
+			response.getWriter().append("Served at: ").append(request.getContextPath());
+		}
+
+		/**
+		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+		 */
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			// TODO Auto-generated method stub
+			 
+				
+		        request.getRequestDispatcher("/link.html").include(request, response);
+		}
+}
+------------------------------------
+Login.java
+
+package com.validation;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Login
+ */
+@WebServlet("/Login")
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		if(username.equals("kavi@gmail.com") && password.equals("12345")) {
+			RequestDispatcher rd = request.getRequestDispatcher("Dashboard");
+			rd.forward(request, response);
+		}
+		else if(username.equals("") || password.equals(""))
+			{
+			out.println("<h2>Sorry UserName or Password Error!</h2>");
+			out.println("<h4>Username or password is empty...Try again<br/><br/></br></h4>");
+			RequestDispatcher rd = request.getRequestDispatcher("/login.html");
+			rd.include(request, response);
+			
+			}
+		else {
+			out.println("<h2>Sorry UserName or Password Error!</h2>");
+			out.println("<h4>Enter valid username and password<br/><br/></br></h4>");
+			RequestDispatcher rd = request.getRequestDispatcher("/login.html");
+			rd.include(request, response);
+		}
+		out.close();
+		
+		
+	}
+}
+-------------------------------------
+
+Logout.java
+
+
+package com.validation;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class Logout
+ */
+@WebServlet("/Logout")
+public class Logout extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Logout() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");  
+        PrintWriter out=response.getWriter(); 
+        HttpSession session=request.getSession();  
+        session.invalidate();  
+          
+        out.print("<h1>You are successfully logged out!</h2>");  
+          
+        out.close();
+        }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+---------------------------------------
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page </title>
+</head>
+<body>
+
+<h1>Login Page</h1>
+<form action="Login" method="post">  
+<table>
+<tr>
+<td><label>Name</label></td>
+<td><input type="text" name="username"/></td>
+</tr>
+<tr>
+<td><label>Password</label></td>
+<td><input type="password" name="password"/></td>
+</tr>
+<tr>
+<td align="center" colspan="2"><input type="submit" value="login"/></td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>
+
+--------------------------------------
+
+link.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>link</title>
+</head>
+<body>
+
+<h1 style="color:pink" align="center" >A warm welcome to the website!!!></h1>
+<br/>
+<h2 align="center">This is dashboard of the website</h2>
+<h3 align="right"><a href="Logout">Logout</a></h3>
+</body>
+</html>

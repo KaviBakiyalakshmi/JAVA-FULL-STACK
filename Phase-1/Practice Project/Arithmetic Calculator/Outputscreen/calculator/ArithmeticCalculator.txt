@@ -1,0 +1,32 @@
+Practice Program 
+=================
+1.Arithmetic Calculator program
+
+procedure:
+ 
+   Step 1: Here I am using scanner function for getting console input
+
+   Step 2: And perform the arithmetic operation (Addition,Subtraction,Multiplication,Division)using switch case.
+   
+   Step 3: Based on the input values we get required result.
+
+Scanner:
+    
+    Scanner is a class in java.util package 
+    
+    it's mainly used for getting runtime input or collect the user input.
+   
+    You must import util package in your program or else you get error.
+
+Switch case:
+  
+       The java switch case statements executes one satement from multiple conditions. 
+
+Variable:
+     
+       Variable is a container which holds the value while the java program executes.
+       
+       Here I used local variables. 
+       
+    
+          

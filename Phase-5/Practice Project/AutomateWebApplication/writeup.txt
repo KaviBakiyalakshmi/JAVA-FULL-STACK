@@ -1,0 +1,31 @@
+DESCRIPTION
+
+Project Objective:
+
+As a Full Stack Developer, you have to build an automation script that automated the basic functionalities like registration and login. 
+
+ 
+
+Background of the problem statement:
+
+As the project is in the final stage, management has asked you to automate the basic functionalities like registration and login for all the internal employees. This will help the development and DevOps team to work efficiently with the application.
+
+ 
+
+You must use the following:
+
+● Eclipse
+● Selenium WebDriver
+● GitHub
+
+
+procedure
+
+
+    step 1: set the property and connect the driver and get the url
+
+    step 2: we have to check the basic registration form
+
+    step 3: then we need to check login 
+
+    step 4: close the dirver

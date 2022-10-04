@@ -1,0 +1,32 @@
+Longesting Increasing Subsequence order
+----------------------------------------
+
+
+step 1: First we have to Iterative function to find the longest increasing subsequence
+         of a given array
+
+
+Step 2: then stores the LIS[i] stores the longest increasing subsequence of subarray
+         `arr[0…i]` that ends with `arr[i]`
+
+
+step 3: LIS[0] denotes the longest increasing subsequence ending at `arr[0]`
+
+
+step 4: after start from the second array element
+
+
+step 5: do for each element in subarray `arr[0…i-1]`
+
+step 6: To find the longest increasing subsequence that ends with `arr[j]`
+           where `arr[j]` is less than the current element `arr[i]`
+
+step 7: To include `arr[i]` in `LIS[i]`
+
+
+step 8: j` will store an index of LIS
+
+step 9: Finally print LIS
+
+
+

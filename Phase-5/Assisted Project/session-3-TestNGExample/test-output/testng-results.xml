@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="8" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-03T17:55:21 IST" name="Suite" finished-at="2022-10-03T17:56:27 IST" duration-ms="65628">
+    <groups>
+      <group name="Chrome">
+        <method signature="GroupTest.launchChrome()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" name="launchChrome" class="com.simplilearn.testing.GroupTest"/>
+        <method signature="GroupTest.loginWithChrome()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" name="loginWithChrome" class="com.simplilearn.testing.GroupTest"/>
+      </group> <!-- Chrome -->
+      <group name="Firefox">
+        <method signature="GroupTest.launchFireFox()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" name="launchFireFox" class="com.simplilearn.testing.GroupTest"/>
+        <method signature="GroupTest.loginWithFireFox()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" name="loginWithFireFox" class="com.simplilearn.testing.GroupTest"/>
+      </group> <!-- Firefox -->
+    </groups>
+    <test started-at="2022-10-03T17:55:21 IST" name="Test" finished-at="2022-10-03T17:56:27 IST" duration-ms="65628">
+      <class name="com.simplilearn.testing.GroupTest">
+        <test-method signature="launchChrome()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" started-at="2022-10-03T17:55:45 IST" name="launchChrome" finished-at="2022-10-03T17:55:57 IST" duration-ms="12365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchChrome -->
+        <test-method signature="launchFireFox()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" started-at="2022-10-03T17:55:57 IST" name="launchFireFox" finished-at="2022-10-03T17:56:26 IST" duration-ms="28375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchFireFox -->
+        <test-method signature="loginWithChrome()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" started-at="2022-10-03T17:56:26 IST" name="loginWithChrome" finished-at="2022-10-03T17:56:26 IST" depends-on-methods="com.simplilearn.testing.GroupTest.launchChrome" duration-ms="675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithChrome -->
+        <test-method signature="loginWithFireFox()[pri:0, instance:com.simplilearn.testing.GroupTest@121314f7]" started-at="2022-10-03T17:56:26 IST" name="loginWithFireFox" finished-at="2022-10-03T17:56:27 IST" depends-on-methods="com.simplilearn.testing.GroupTest.launchFireFox" duration-ms="712" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[Element <input id="pass" class="inputtext _55r1 _6luy _9npi" name="pass" type="password"> is not reachable by keyboard
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-QJAL9J9', ip: '192.168.0.106', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [65ca646d-1b79-4000-ac4e-a60b0fc7061c, sendKeysToElement {id=9dab4621-4e81-445a-a985-5deaa414ce42, value=[Ljava.lang.CharSequence;@36061cf3}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.1, moz:accessibilityChecks: false, moz:buildID: 20220922151854, moz:debuggerAddress: 127.0.0.1:63846, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20464, moz:profile: C:\Users\kavi\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:63846/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on WINDOWS (65ca646d-1b79-4000-ac4e-a60b0fc7061c)] -> id: pass]
+Session ID: 65ca646d-1b79-4000-ac4e-a60b0fc7061c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: Element <input id="pass" class="inputtext _55r1 _6luy _9npi" name="pass" type="password"> is not reachable by keyboard
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-QJAL9J9', ip: '192.168.0.106', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [65ca646d-1b79-4000-ac4e-a60b0fc7061c, sendKeysToElement {id=9dab4621-4e81-445a-a985-5deaa414ce42, value=[Ljava.lang.CharSequence;@36061cf3}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.1, moz:accessibilityChecks: false, moz:buildID: 20220922151854, moz:debuggerAddress: 127.0.0.1:63846, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20464, moz:profile: C:\Users\kavi\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:63846/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on WINDOWS (65ca646d-1b79-4000-ac4e-a60b0fc7061c)] -> id: pass]
+Session ID: 65ca646d-1b79-4000-ac4e-a60b0fc7061c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
+at com.simplilearn.testing.GroupTest.loginWithFireFox(GroupTest.java:52)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithFireFox -->
+      </class> <!-- com.simplilearn.testing.GroupTest -->
+      <class name="com.simplilearn.testing.Assertion">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.simplilearn.testing.Assertion@5a45133e]" started-at="2022-10-03T17:55:33 IST" name="beforeMethod" finished-at="2022-10-03T17:55:36 IST" duration-ms="3409" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TitleTest()[pri:0, instance:com.simplilearn.testing.Assertion@5a45133e]" started-at="2022-10-03T17:55:36 IST" name="TitleTest" finished-at="2022-10-03T17:55:39 IST" duration-ms="2530" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TitleTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.simplilearn.testing.Assertion@5a45133e]" started-at="2022-10-03T17:55:39 IST" name="afterMethod" finished-at="2022-10-03T17:55:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.simplilearn.testing.Assertion@5a45133e]" started-at="2022-10-03T17:55:39 IST" name="beforeMethod" finished-at="2022-10-03T17:55:42 IST" duration-ms="3327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TitleTestFacebook()[pri:0, instance:com.simplilearn.testing.Assertion@5a45133e]" started-at="2022-10-03T17:55:42 IST" name="TitleTestFacebook" finished-at="2022-10-03T17:55:45 IST" duration-ms="2891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TitleTestFacebook -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.simplilearn.testing.Assertion@5a45133e]" started-at="2022-10-03T17:55:45 IST" name="afterMethod" finished-at="2022-10-03T17:55:45 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.simplilearn.testing.Assertion -->
+      <class name="com.simplilearn.testing.FacebookLogin">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.simplilearn.testing.FacebookLogin@6404f418]" started-at="2022-10-03T17:55:21 IST" name="beforeMethod" finished-at="2022-10-03T17:55:30 IST" duration-ms="8134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="facebook()[pri:0, instance:com.simplilearn.testing.FacebookLogin@6404f418]" started-at="2022-10-03T17:55:30 IST" name="facebook" finished-at="2022-10-03T17:55:32 IST" duration-ms="2806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- facebook -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.simplilearn.testing.FacebookLogin@6404f418]" started-at="2022-10-03T17:55:32 IST" name="afterMethod" finished-at="2022-10-03T17:55:32 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.simplilearn.testing.FacebookLogin -->
+      <class name="com.simplilearn.testing.FirstDemo">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:21 IST" name="beforeSuite" finished-at="2022-10-03T17:55:21 IST" duration-ms="45" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:21 IST" name="beforeTest" finished-at="2022-10-03T17:55:21 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="Beforeclass()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:32 IST" name="Beforeclass" finished-at="2022-10-03T17:55:32 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Beforeclass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:32 IST" name="beforeMethod" finished-at="2022-10-03T17:55:32 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="Test1()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:32 IST" name="Test1" finished-at="2022-10-03T17:55:33 IST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test1 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:33 IST" name="afterMethod" finished-at="2022-10-03T17:55:33 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:33 IST" name="beforeMethod" finished-at="2022-10-03T17:55:33 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="Test2()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:33 IST" name="Test2" finished-at="2022-10-03T17:55:33 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test2 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:33 IST" name="afterMethod" finished-at="2022-10-03T17:55:33 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterclass()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:55:33 IST" name="afterclass" finished-at="2022-10-03T17:55:33 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterclass -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:56:27 IST" name="afterTest" finished-at="2022-10-03T17:56:27 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.simplilearn.testing.FirstDemo@1ed6388a]" started-at="2022-10-03T17:56:27 IST" name="afterSuite" finished-at="2022-10-03T17:56:27 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.simplilearn.testing.FirstDemo -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

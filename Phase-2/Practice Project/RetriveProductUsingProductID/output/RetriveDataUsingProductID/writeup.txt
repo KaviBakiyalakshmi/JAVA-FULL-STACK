@@ -1,0 +1,38 @@
+Retrieving the Product Details Using the Product ID.
+
+
+DESCRIPTION
+------------
+
+Project objective:
+-------------------
+ Create a servlet-based application that shows a form to enter a product ID.
+ 
+ The product ID is then validated, and product details are retrieved from the database and displayed to the user.
+
+ You need to create a product table in MySQL and prepopulate it with data.
+
+ Use JDBC to do all database processing.
+
+
+Background of the problem statement:
+---------------------------------------
+
+As a part of developing an e-commerce web application, the admin backend requires a module that can retrieve product information based on the product ID.
+ 
+STEP1: First I have created a new dynamic Web Project. Then inside the project, create Procedure servlet and create a class DB Connection.
+
+
+STEP2: Inside the html page, I have create form with label
+
+
+STEP3: then it will send the response to Procedure servlet ,and we get the connection from Database.
+
+
+STEP4: First of all, we have create a database and create the table, insert the values inside the table.
+
+
+STEP5: Create a servlet that will take the product ID and use JDBC to query the database for the product
+
+
+STEP 6: If the product is found, the servlet will display the product details, otherwise it will show an error message

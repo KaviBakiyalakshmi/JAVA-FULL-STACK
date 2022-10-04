@@ -1,0 +1,37 @@
+
+Project objective:
+
+As a developer, fix the bugs in the application using the appropriate algorithms technique.
+
+Background of the problem statement:
+
+You have been assigned a few tasks during the sprint planning. Solving the bugs raised
+by the testing team is one among them. You are given the boilerplate code and are asked
+to complete it by fixing the bugs.
+
+STEP 1 Create a Java project in your IDE.
+
+STEP 2 Select new Java class-provide class name follow camelCasing).
+
+
+STEP 3 Inside the search expenses,I have created a variable to get the search element
+from user.
+
+
+STEP 4 Then in if condition if condition if the arraylist contains the search element then
+it will print the element you searched for is found.
+
+
+STEP 5 If the condition is not true tyen it will print the element is not found.
+
+
+STEP 6 Then for sorting the values,I have used comparator.sort() method to sort the
+element.
+
+
+STEP 7 Then by using while condition, I have checked the values using true that is if the
+values entered if it is correct then it will execute next .
+
+
+STEP 8 Then I have used System.exit(1) method to stop in case 6 or else the loop will not
+stop because of while condition.Execute the program.

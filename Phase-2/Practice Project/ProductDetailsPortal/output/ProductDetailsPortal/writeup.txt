@@ -1,0 +1,21 @@
+DESCRIPTION:
+****
+
+Create a servlet-based web application that shows a form to enter product details. 
+Capture the details in a servlet and then display the data that was entered.
+
+
+Functionalities supported by JSP
+
+JSP technology is used to create web application just like Servlet technology.
+It can be thought of as an extension to Servlet because it provides more functionality than servlet such as expression language, JSTL, etc.
+A JSP page consists of HTML tags and JSP tags. 
+The JSP pages are easier to maintain than Servlet because we can separate designing and development.
+It provides some additional features such as Expression Language, Custom Tags, etc.
+
+Product.java:
+
+The class product is created to store the product ID, product name , color and Price of the Product.
+A parameterized constructor along with getters and setters are created for this to show the model.
+The user is asked to enter the product ID, product name, color and Price of the product. The page also
+contains a submit button which takes the user to the display page where the product details are displayed.

@@ -1,0 +1,26 @@
+Email validation is required in nearly every application that has user registration in place.
+
+An email address is divided into three main parts: the local part, an @ symbol, and a domain. 
+
+It can take a lot of effort to validate an email address through string manipulation techniques,
+ as we typically need to count and check all the character types and lengths. 
+But in Java, by using a regular expression, it can be much easier.
+
+As we know, a regular expression is a sequence of characters to match patterns. 
+
+Strict Regular Expression Validation:
+
+The following restrictions are imposed in the email address' local part by using this regex:
+It allows numeric values from 0 to 9.
+Both uppercase and lowercase letters from a to z are allowed.
+Allowed are underscore “_”, hyphen “-“, and dot “.”
+Dot isn't allowed at the start and end of the local part.
+Consecutive dots aren't allowed.
+For the local part, a maximum of 64 characters are allowed.
+
+
+I wrote test cases in the AuthenticationTest class to verify the email and Password
+
+assertTrue: checks that a condition is true. 
+assertNull: checks that object is null.
+assertNotNull: checks that object is not null.

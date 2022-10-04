@@ -1,0 +1,25 @@
+
+<h2>User Details</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th><i class="fa fa-user"></i>Name</th>
+            <th><i class="fa fa-user"></i>UserName</th>
+            <th><i class="fa fa-envelope"></i>Email</th>
+            <th><i class="fa fa-globe"></i>Website</th>
+            <th><i class="fa fa-phone-square"></i>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of user">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.website}}</td>
+            <td>{{u.phone}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+File handling
+--------------
+
+procedure
+----------
+
+    step 1: First we can create file using new keyword from that you are giving file location
+   
+    step 2: And the we check created file is there or not by using createNewFile(). 
+
+    step 3: Write the data to the files using write() method.
+
+    step 4: Append text to the files using write() but you change the boolean as "True" or else we can't appended.
+
+    step 4: Read data to the files using "Read" method inside while loop.
+
+
+concepts: There are many ways to create,read,write,append the files but i am using one of the method.
+---------
+
+     Create file
+
+     write file
+
+     Append file
+ 
+     Read file
+    
+     

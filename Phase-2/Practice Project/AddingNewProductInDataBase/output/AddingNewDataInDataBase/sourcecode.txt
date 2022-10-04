@@ -1,0 +1,164 @@
+src/main/webapp
+index.jsp
+-----------
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>THIS PROJECT IS ADDING A NEW PRODUCT IN DATABASE!</h2>
+<a href="prodc.html"> Product form</a>
+</body>
+</html>
+
+
+prodc.html
+------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="get" action="StudentDAO">
+Enter name<input type="text" name="txtname"><br><br>
+Enter cost<input type="text" name="txtcost"><br><br>
+<input type="submit" value="Save"><br><br>
+
+</form>
+</body>
+</html>
+
+
+
+
+src/main/java/ProductInfo
+Product.java
+---------------
+
+@Table(name="Product")
+public class Product {
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private int proid;
+@Column(length=20)
+private String name;
+@Column
+private int cost;
+public int getCost() {
+return cost;
+}
+public void setCost(int cost) {
+this.cost = cost;
+}
+public int getproid() {
+return proid;
+}
+public void setproid(int proid) {
+this.proid = proid;
+}
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+}
+
+
+StudentDAO.java
+-----------------
+
+package ProductInfo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+@WebServlet("/StudentDAO")
+
+public class StudentDAO extends HttpServlet
+{
+private static final long serialVersionUID = 1L;
+
+protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+
+{
+int cost = Integer.parseInt(request.getParameter("txtcost"));
+
+String name = request.getParameter("txtname");
+// put values in Object
+Product p1 = new Product();
+p1.setCost(cost);
+p1.setName(name);
+SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+
+Session session = sessionFactory.openSession();
+session.beginTransaction();
+
+int i = (Integer) session.save(p1);
+session.getTransaction().commit();
+session.close();
+PrintWriter out = response.getWriter();
+if (i > 0)
+out.println("Record inserted");
+else
+out.println("Record not inserted");
+}
+}
+
+
+
+Java resources/src/main/java
+hibernate.cfg.xml
+------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+ "-//Hibernate/Hibernate Configuration DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+ 
+ <property name="format_sql">false</property>
+ <property
+name="connection.url">jdbc:mysql://localhost:3306/ProductRecord</property>
+ <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+ <property name="connection.username">root</property>
+ <property name="connection.password">root</property>
+ 
+<!-- JDBC connection pool (use the built-in) -->
+ <property name="connection.pool_size">2</property>
+ <!-- SQL dialect -->
+ <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+ 
+ <!-- Disable the second-level cache -->
+ <property
+name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+ <!-- Echo all executed SQL to stdout -->
+ <property name="show_sql">true</property>
+ 
+ <!-- Drop and re-create the database schema on startup -->
+ <property name="hbm2ddl.auto">update</property>
+ 
+ 
+<!-- <property name="hbm2ddl.auto">update</property> -->
+ 
+<mapping class="ProductInfo.Product"></mapping>
+ 
+ </session-factory>
+</hibernate-configuration>

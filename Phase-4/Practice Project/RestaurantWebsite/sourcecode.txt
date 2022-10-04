@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+
+    <!--goto the official website of bootstrap and copy the css and bundle script file-->
+    <!--link:  https://getbootstrap.com/docs/4.6/getting-started/introduction/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!--fontawesome library-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy=
+</head>
+<body>
+   <!--Header-->
+   <div class="card border-success text-center">
+    <div class="card-header bg-transperent border-danger">
+       <b> MING'S KITCHEN</b> <br>
+       <p class="text-right"><b>Call Us: 8767845674</b></p>
+    </div>
+   </div>
+
+   <!--Body-->
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a href="#" class="navbar-brand">MING'S KITCHEN</a>
+
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="#" class="nav-link">HOME</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">ABOUT US</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">SERVICES</a>
+            
+        </li>
+
+
+        <li class="nav-item">
+            <a href="#" class="nav-link" button onclick="myFunction()">CONTACT US</button></a>
+
+                <script>
+                function myFunction() {
+                  alert("Welcome to the ming's Kitchen Kindly contact us on 8767845674 ");
+                }
+            
+</script>
+        </li>
+    </ul>
+</nav>
+
+   <div class="card-body text-primary">
+   <p class="card-title"><b>Welcome to the Ming's Kitchen</b></p>
+   <p class="card-text"><b>Delivering great food for more than 15 years!</b>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="images/second.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/first.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/third.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/index.jpg" alt="Fouth slide">
+        </div>
+      </div>
+      <h1>See the Delicious food </h1>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm" style="text-align: center;">
+            <h1 class="display-4"><b>Order Available</b></h1><br><br>
+            <h1><span class="badge badge-secondary">M-F 9:00am - 8:00pm</span></h1>
+          </div>
+          <div class="col-sm" style="text-align: center;">
+            <h1 class="display-4"><b>Ming's Special</b></h1>
+            <h1><span class="badge badge-secondary">Pizza</span></h1>
+            <h1><span class="badge badge-secondary">Italian</span></h1>
+            <h1><span class="badge badge-secondary">Burger</span></h1>
+            
+</div>
+          <div class="col-sm" style="text-align: center;">
+            <h1 class="display-4"><b>Top Trending 20% offer</b></h1>
+            <h1><span class="badge badge-secondary">Ming's Special</span></h1>
+            <h1><span class="badge badge-secondary">Non-Veg special</span></h1>
+            <h1><span class="badge badge-secondary">Indian Special</span></h1>
+
+          </div>
+        </div>
+      </div>
+
+<!--Footer-->
+<div class="card-footer bg transperrent border-info">
+    <b>@copyright Developed by:kavi's Technology</b>
+    <p class="text-right"><b>Address:Mings Kitchen, Kelambakkam, Chennai</b></p>
+</div>
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

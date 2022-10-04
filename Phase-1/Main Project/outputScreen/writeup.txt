@@ -1,0 +1,70 @@
+Virtual Key Locker:
+---------------------
+
+Step 1: Enter your choice which you want to select
+        
+            1. Retrive current filename in Ascending order
+            2. Business Level operation Menu.
+            3. Exit from the Application
+
+
+    1.Retrive current filename in Ascending order
+            
+           step 1: Here I am using one method listtingFileAsc() from that i am checking my folder is there or not 
+                     by using isFile(),isdirectory(),getAbsolutePath().
+
+           step 2: And then we can call  back main function mainMenu().
+
+    2.Business Level operation Menu
+
+          step 1:Add a file and its content to the directory by using creatFile();
+        
+          step 2:Delete a file from directory by using deleteMethod();
+
+          step 3:Searching a file and showing the content by using searchMethod();
+
+          step 4:Exit from the below operation and then come back to the main function.
+
+    3.Exit from the Application
+           
+             Once the client is perfrom all the operation we can close the Virtual locker uisng Exit options.
+                  
+
+   Methods:
+-------------
+
+         mainMenu();--->Main operation performed like retrive,business level,Exit Apps
+
+         listingFileAsc();---->Ascending operation performed using Arrays.sort();
+
+         fileMenuOperations();-----> 1. Create a file using file.createNewfile();
+                                      
+                                     2. Delete a file using file.delete();
+
+                                     3. Search a file using file.exists():
+
+                                     4. come back to main menu by calling the mainMenu();
+
+         
+ SubMethods:
+-------------
+
+            createFile()
+            
+            deleteMethod()
+           
+            searchMethod()
+
+                 
+                                     
+ case/ looping statement 
+-------------------------
+
+      Switch case
+        
+      forloop
+    
+      for each loop
+                    
+                 
+                              

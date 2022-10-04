@@ -1,0 +1,44 @@
+VALIDATION OF USER LOGIN
+
+Problem Statement:
+
+As a developer, write a program for VALIDATION OF USER LOGIN
+
+In Login Servlet, 
+
+PrintWriter() is used to write a formatted string to the writer using specified arguments and format string.
+It is used to print an object.
+
+getParameter() returns the value of a request parameter as a String.
+It returns the value of username and password
+
+
+Using if condition to check the userid and password, if username and password matches
+Then it will print "Welcome to the user"
+Else it will print "Please try again" 
+
+Solution:
+
+Step 1: Create a Dynamic new Project webapp html. Here I created html file n
+
+"LoginForm html" And code has done for execution purpose.
+
+Step 2: Then create 3 Servlets as "LoginCheck Welcome Logout (src/main/java→ package servlet). Here I used if else to validate email piven by user. If user given corn credentials then it goes to welcome page
+
+Step 3: And it displays "Logout" option.
+
+Step 4: If user given incorrect credentials then it gives Invalid email and password" And again displays a login page
+
+Step 5: And in web xml, we map between URL and servlets
+
+Step 6: Now we select Login Form.html→→ run as
+
+server.
+
+I
+
+Step 7: Finally, a web page opens and gives login page. And continues the performance as
+
+per given by me
+
+Good t

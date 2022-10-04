@@ -1,0 +1,70 @@
+{
+  "todos": [
+    {
+      "firstname": "kavi",
+      "lastname": "kavin",
+      "email": "Kavi@gmail.com",
+      "id": 1
+    },
+    {
+      "firstname": "Mithu",
+      "lastname": "G",
+      "email": "mg@gmail.com",
+      "id": 2
+    },
+    {
+      "firstname": "Anu",
+      "lastname": "Radha",
+      "email": "anu@gmail.com",
+      "id": 3
+    },
+    {
+      "firstname": "vino",
+      "lastname": "kavi",
+      "email": "vino@gmail.com",
+      "id": 4
+    },
+    {
+      "firstname": "jack",
+      "lastname": "rose",
+      "email": "jack@gmail.com",
+      "id": 5
+    },
+    {
+      "firstname": "sri",
+      "lastname": "bhavaan",
+      "email": "sri@gmail.com",
+      "id": 6
+    },
+    {
+      "firstname": "hrithik",
+      "lastname": "sai",
+      "email": "sai@gmail.com",
+      "id": 7
+    },
+    {
+      "firstname": "heyuser",
+      "lastname": "use",
+      "email": "use@gmail.com",
+      "id": 8
+    },
+    {
+      "firstname": "demo",
+      "lastname": "demo",
+      "email": "demo@123",
+      "id": 9
+    },
+    {
+      "firstname": "demo",
+      "lastname": "demo",
+      "email": "demo@123",
+      "id": 10
+    },
+    {
+      "firstname": "Hey",
+      "lastname": "user",
+      "email": "hey@gmail.com",
+      "id": 11
+    }
+  ]
+}
