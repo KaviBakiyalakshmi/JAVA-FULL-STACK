@@ -34,7 +34,21 @@ public class RegistrationForm {
 		WebElement register=driver.findElement(By.cssSelector("#registerButton"));
 		register.click();
 		
+		//login button
+		WebElement login=driver.findElement(By.cssSelector("#loginContainer"));
+		login.click();
 		
+		// login email
+		 WebElement Email=driver.findElement(By.id("id_email_login"));
+		 Email.sendKeys("kavi@gmail.com");
+		 
+		//password
+		WebElement Password=driver.findElement(By.id("id_password"));
+		Password.sendKeys("kavi@123");
+		
+		//button
+		WebElement Login=driver.findElement(By.xpath("//*[@id=\"cndidate_login_widget\"]/form/ul[2]/li[4]/div/button"));
+		Login.click();
 	} 
 
 }

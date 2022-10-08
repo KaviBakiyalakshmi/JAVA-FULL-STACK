@@ -15,7 +15,7 @@ public class IframeExample {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\\\Phase 5\\\\SeleniumJarFiles\\\\chrome-Driver\\\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
-		driver.get("D:\\Phase 5\\session-1\\session-2-selenium\\src\\com\\simplilearn\\demo\\iframe.html");
+		driver.get("D:\\Phase 5\\session-2-selenium\\src\\com\\simplilearn\\demo\\iframe.html");
 		
 		
 		//find iframe from the website
