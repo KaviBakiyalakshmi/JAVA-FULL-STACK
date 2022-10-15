@@ -8,13 +8,10 @@ import org.springframework.stereotype.Service;
 import com.attendance.demo.entity.Attendance;
 import com.attendance.demo.repo.AttendanceRepo;
 
+@Service
 public class AttendanceService {
 	
 	
-
-	@Service
-	public class UserService {
-		
 		@Autowired
 		private AttendanceRepo repo;
 		
@@ -24,7 +21,7 @@ public class AttendanceService {
 		public List<Attendance> getAllAttendance(){
 			return repo.findAll();
 		}
-		public Attendance getUserById(int id) {
+		public Attendance getAttendanceById(long id) {
 			if(repo.findById(id).isPresent()) {
 				return repo.findById(id).get();
 			}
@@ -33,7 +30,7 @@ public class AttendanceService {
 			}
 			
 		}
-		public Attendance updateUser(int id, Attendance newAttendance) {
+		public Attendance updateAttendance(long id, Attendance newAttendance) {
 			if(repo.findById(id).isPresent()) {
 				Attendance olduser= repo.findById(id).get();
 				olduser.setName(newAttendance.getName());
@@ -50,7 +47,7 @@ public class AttendanceService {
 		}
 		
 		
-		public boolean deleteUser(int id) {
+		public boolean deleteAttendance(long id) {
 			if(repo.findById(id).isPresent()) {
 				repo.deleteById(id);
 				return true;
@@ -63,4 +60,4 @@ public class AttendanceService {
 		
 	}
 
-}
+
