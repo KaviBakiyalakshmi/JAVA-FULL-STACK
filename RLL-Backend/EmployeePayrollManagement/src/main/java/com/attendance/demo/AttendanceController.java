@@ -49,9 +49,9 @@ public class AttendanceController {
 		
 		
 		
-		@GetMapping("/{id}")
-		public ResponseEntity<Attendance>getAttendanceById (@PathVariable int id){
-			Attendance attendance= service.getAttendanceById(id);
+		@GetMapping("/{employeeid}")
+		public ResponseEntity<Attendance>getAttendanceById (@PathVariable long employeeid){
+			Attendance attendance= service.getAttendanceById(employeeid);
 			
 			if(attendance!=null)
 				return new ResponseEntity<Attendance>(attendance, HttpStatus.FOUND);
@@ -60,9 +60,9 @@ public class AttendanceController {
 		}
 		
 		
-		@PutMapping("/{id}")
-		public ResponseEntity<Object> updateAttendance(@PathVariable int id,@RequestBody Attendance newAttendance){
-			Attendance attendance= service.updateAttendance(id, newAttendance);
+		@PutMapping("/{employeeid}")
+		public ResponseEntity<Object> updateAttendance(@PathVariable long employeeid,@RequestBody Attendance newAttendance){
+			Attendance attendance= service.updateAttendance(employeeid, newAttendance);
 			
 			if (attendance!=null)
 				return new ResponseEntity<Object>(attendance,HttpStatus.OK);
@@ -71,9 +71,9 @@ public class AttendanceController {
 		}
 		
 		
-		@DeleteMapping("/{id}")
-		public ResponseEntity<String>deleteAttendance(@PathVariable int id){
-			boolean result = service.deleteAttendance(id);
+		@DeleteMapping("/{employeeid}")
+		public ResponseEntity<String>deleteAttendance(@PathVariable long employeeid){
+			boolean result = service.deleteAttendance(employeeid);
 			if(result) 
 				return new ResponseEntity<String>("Object Deleted",HttpStatus.OK);
 			else
@@ -82,5 +82,4 @@ public class AttendanceController {
 		}
 	 
 	}
-
 

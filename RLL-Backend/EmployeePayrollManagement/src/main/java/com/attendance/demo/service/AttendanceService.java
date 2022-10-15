@@ -21,18 +21,19 @@ public class AttendanceService {
 		public List<Attendance> getAllAttendance(){
 			return repo.findAll();
 		}
-		public Attendance getAttendanceById(long id) {
-			if(repo.findById(id).isPresent()) {
-				return repo.findById(id).get();
+		public Attendance getAttendanceById(long employeeid) {
+			if(repo.findById(employeeid).isPresent()) {
+				return repo.findById(employeeid).get();
 			}
 			else {
 				return null;
 			}
 			
 		}
-		public Attendance updateAttendance(long id, Attendance newAttendance) {
-			if(repo.findById(id).isPresent()) {
-				Attendance olduser= repo.findById(id).get();
+		public Attendance updateAttendance(long employeeid, Attendance newAttendance) {
+			if(repo.findById(employeeid).isPresent()) {
+				Attendance olduser= repo.findById(employeeid).get();
+				olduser.setEmployeeid(newAttendance.getEmployeeid());
 				olduser.setName(newAttendance.getName());
 				olduser.setStarttime(newAttendance.getStarttime());
 				olduser.setEndtime(newAttendance.getEndtime());
@@ -47,9 +48,9 @@ public class AttendanceService {
 		}
 		
 		
-		public boolean deleteAttendance(long id) {
-			if(repo.findById(id).isPresent()) {
-				repo.deleteById(id);
+		public boolean deleteAttendance(long employeeid) {
+			if(repo.findById(employeeid).isPresent()) {
+				repo.deleteById(employeeid);
 				return true;
 			}
 			
@@ -59,5 +60,4 @@ public class AttendanceService {
 		}
 		
 	}
-
 
