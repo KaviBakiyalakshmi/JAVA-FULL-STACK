@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms'
+import { Router } from '@angular/router';
 import { Attendance } from 'src/app/model/attendance';
 import { AttendanceService } from 'src/app/service/attendance.service';
 
@@ -16,7 +17,7 @@ export class DashboardComponent implements OnInit {
   atnObj : Attendance =new Attendance();
   atnList : Attendance[] = [];
 
-  constructor(private formBuilder : FormBuilder, private atnService : AttendanceService) { }
+  constructor(private formBuilder : FormBuilder, private atnService : AttendanceService, private Router : Router) { }
 
 
 
@@ -73,6 +74,11 @@ editAttendance(atn : Attendance) {
   this.atnDetail.controls['status'].setValue(atn.status);
 
   
+}
+
+close(){
+  this.getAllAttendance();
+ // this.Router.navigate("http://localhost:4200/");
 }
 
 updateAttendance() {

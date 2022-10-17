@@ -7,6 +7,7 @@ import {FormGroup,FormBuilder,Validators}from '@angular/forms'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  
 
   //declare formgroup variables
   signupForm:FormGroup;
