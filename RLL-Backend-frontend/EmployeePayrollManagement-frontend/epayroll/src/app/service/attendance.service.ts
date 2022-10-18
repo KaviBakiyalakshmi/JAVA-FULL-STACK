@@ -12,17 +12,26 @@ export class AttendanceService {
   getAtnURL : string;
   updateAtnUrl : string;
   deleteAtnUrl : string;
+ // getidAtnUrl : number;
   
-
+  
+ 
+ 
   constructor(private http : HttpClient) { 
 
     this. addAtnURL = "http://localhost:8082/api/attendance";
     this. getAtnURL = "http://localhost:8082/api/attendance/";
     this. updateAtnUrl = "http://localhost:8082/api/attendance/";
     this. deleteAtnUrl="http://localhost:8082/api/attendance";
-
+   // this. getidAtnUrl="http://localhost:8082/api/attendance";
   }
 
+  // url='http://localhost:8085/api/attendance';
+
+  // public getAllInfo(employeeid:number):Observable<Attendance[]>{
+  //   return this.http.get<Attendance[]>(`${this.url}/atn/${employeeid}`);
+    
+  // }
   addAttendance(atn : Attendance): Observable<Attendance> {
     return this.http.post<Attendance>(this.addAtnURL,atn);
   }
@@ -37,6 +46,7 @@ export class AttendanceService {
 
   deleteAttendance(atn : Attendance) : Observable<Attendance> {
     return this.http.delete<Attendance>(this.deleteAtnUrl+'/'+atn.id);
-}
+  }
+
 
 }
