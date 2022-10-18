@@ -23,15 +23,14 @@ export class ForgotpasswordComponent implements OnInit {
       }
     );
   }
-  OnSubmit(){
-    this.submitted=true;
-    if(this.PasswordResetForm.invalid)
-    return;
-    else
-    alert("Password Reset Successfully");
-  }
-  get f(){
-    return this.PasswordResetForm.controls;
-  }
-
+OnSubmit(){
+  this.submitted=true;
+  if(this.PasswordResetForm.invalid)
+  return;
+  else
+  alert("Password Reset Successfully");
+}
+get f(){
+  return this.PasswordResetForm.controls;
+}
 }

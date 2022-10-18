@@ -19,9 +19,9 @@ export class AttendanceService {
  
   constructor(private http : HttpClient) { 
 
-    this. addAtnURL = "http://localhost:8082/api/attendance";
+    this. addAtnURL = "http://localhost:8082/api/attendance/add";
     this. getAtnURL = "http://localhost:8082/api/attendance/";
-    this. updateAtnUrl = "http://localhost:8082/api/attendance/";
+    this. updateAtnUrl = "http://localhost:8082/api/attendance/update";
     this. deleteAtnUrl="http://localhost:8082/api/attendance";
    // this. getidAtnUrl="http://localhost:8082/api/attendance";
   }
