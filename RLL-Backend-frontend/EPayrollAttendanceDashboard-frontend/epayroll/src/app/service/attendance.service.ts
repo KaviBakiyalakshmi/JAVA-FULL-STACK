@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Attendance } from '../model/attendance';
 
@@ -41,12 +42,11 @@ export class AttendanceService {
   }
 
   updateAttendance(atn :Attendance) : Observable<Attendance>{
-    return this.http.put<Attendance>(this.updateAtnUrl, atn);
+    return this.http.put<Attendance>(this.updateAtnUrl+'/',atn.id);
   }
 
   deleteAttendance(atn : Attendance) : Observable<Attendance> {
     return this.http.delete<Attendance>(this.deleteAtnUrl+'/'+atn.id);
   }
-
 
 }
